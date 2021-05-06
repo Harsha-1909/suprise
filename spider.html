@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+
+    <title>Donga Spider</title>
+  </head>
+  <style media="screen">
+    body {
+	 background-color: #7c7c7c;
+	 font-family: "Muli", sans-serif;
+	 margin: 0;
+	 overflow: hidden;
+	 padding: 0;
+}
+ .bg {
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center;
+	 height: 100vh;
+	 left: 0;
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+	 opacity: 0.5;
+}
+/*/
+////////////////////// general ///
+/*/
+/*/
+////////////////////// spider ///
+/*/
+ .container {
+	 animation: spider-anima 12s ease-out;
+	 animation-fill-mode: forwards;
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+}
+ @keyframes spider-anima {
+	 0% {
+		 top: -100px;
+	}
+	 50% {
+		 top: 50%;
+	}
+}
+ .container .eye {
+	 background-color: #fff;
+	 height: 1px;
+	 position: absolute;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 width: 1px;
+}
+ .container .eye-right {
+	 right: 6px;
+}
+ .container .eye-left {
+	 left: 6px;
+}
+ .spider-web {
+	 animation: spider-web-anima 6s ease-out;
+	 animation-fill-mode: forwards;
+	 background-color: #000;
+	 border-radius: 4px;
+	 height: 0;
+	 left: 50%;
+	 position: absolute;
+	 transform: translateX(-50%);
+	 width: 2px;
+}
+ @keyframes spider-web-anima {
+	 0% {
+		 height: 0;
+		 top: -100px;
+	}
+	 100% {
+		 height: 50vh;
+		 top: 0;
+	}
+}
+ .spider-body {
+	 background-color: #000;
+	 border-radius: 50%;
+	 height: 20px;
+	 left: 50%;
+	 position: absolute;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+	 width: 20px;
+}
+ .spider-body:before {
+	 content: "";
+	 background-color: #000;
+	 border-radius: 50%;
+	 height: 15px;
+	 left: 2.5px;
+	 position: absolute;
+	 top: -5px;
+	 width: 15px;
+	 z-index: -99;
+}
+ .right {
+	 transform: rotateY(180deg);
+}
+ .arm-container .arm {
+	 background-color: #000;
+	 border-radius: 4px;
+	 height: 4px;
+	 position: absolute;
+	 transform-origin: center left;
+	 width: 30px;
+}
+ .arm-container .A {
+	 animation: A-anima 3s infinite ease-in-out;
+	 transform: rotate(75deg);
+}
+ @keyframes A-anima {
+	 0% {
+		 transform: rotate(75deg);
+	}
+	 50% {
+		 transform: rotate(-70deg);
+	}
+}
+ .arm-container .A:nth-child(2) {
+	 animation-delay: -0.2s;
+}
+ .arm-container .A:nth-child(3) {
+	 animation-delay: -0.5s;
+}
+ .arm-container .A:nth-child(4) {
+	 animation-delay: -0.4s;
+}
+ .arm-container .B {
+	 animation: B-anima 3s infinite ease-in-out;
+	 left: calc(100% - 2px);
+	 transform: rotate(10deg);
+}
+ @keyframes B-anima {
+	 0% {
+		 transform: rotate(10deg);
+	}
+	 50% {
+		 transform: rotate(120deg);
+	}
+	 80% {
+		 transform: rotate(20deg);
+	}
+}
+ .arm-container .C {
+	 animation: C-anima 3s infinite ease-in-out;
+	 left: calc(100% - 2px);
+	 transform: rotate(10deg);
+}
+ @keyframes C-anima {
+	 0% {
+		 transform: rotate(10deg);
+	}
+	 50% {
+		 transform: rotate(90deg);
+	}
+	 80% {
+		 transform: rotate(10deg);
+	}
+}
+
+.btn-dark{
+  background-color:black;
+  color:white;
+}
+.btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 0;
+
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius:4px;
+    border: 1px solid transparent;
+}
+.btn:focus,
+.btn:active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+
+    text-decoration: none;
+}
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+/* default
+---------------------------- */
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-default:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-default:active {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+/*/
+////////////////////// shadow ///
+/*/
+ .shadow {
+	 left: calc(50% + 10px);
+	 background-color: rgba(45, 45, 45, 0.5);
+}
+ .shadow .arm {
+	 background-color: rgba(45, 45, 45, 0.5);
+}
+ .shadow-body {
+	 background-color: rgba(45, 45, 45, 0.5);
+}
+ .shadow-body:before {
+	 background-color: rgba(45, 45, 45, 0.5);
+}
+ .shadow-body .eye {
+	 display: none;
+}
+/*/
+////////////////////// credit ///
+/*/
+ #link {
+	 bottom: 20px;
+	 color: #fff;
+	 opacity: 0.6;
+	 display: flex;
+	 align-items: center;
+	 position: absolute;
+	 left: 50%;
+	 transform: translateX(-50%);
+}
+ #link p {
+	 margin: 0;
+	 margin-left: 5px;
+}
+ #link:hover {
+	 opacity: 1;
+}
+
+  </style>
+  <body>
+    <div class="bg"></div>
+
+<!-- //////////////// SHADOW //////////////// -->
+<div class="spider-web shadow"></div>
+<div class="container shadow">
+  <div class="arm-container right">
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+  </div>
+  <div class="arm-container left">
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+  </div>
+  <div class="spider-body shadow-body">
+    <div class="eye eye-left"></div>
+    <div class="eye eye-right"></div>
+  </div>
+</div>
+
+<!-- //////////////// SPIDER //////////////// -->
+<div class="spider-web"></div>
+<div class="container">
+  <div class="arm-container right">
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+  </div>
+  <div class="arm-container left">
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+    <div class="arm A"><div class="arm B"><div class="arm C"></div></div></div>
+  </div>
+  <div class="spider-body">
+    <div class="eye eye-left"></div>
+    <div class="eye eye-right"></div>
+  </div>
+</div>
+
+<!-- //////////////// CREDIT //////////////// -->
+<a href="baby.html">
+  <div id="link">
+    <h3>Shivuuu daggariki vachastundhii!!</h3>
+  </div>
+  </a>
+  <!-- <button type="button" name="button" class="btn btn-secondary" style="margin:10px;" onclick="cl()">Back</button>
+  <button type="button" name="button"  class="btn btn-dark" style="margin:10px;" onclick="op()">Next</button> -->
+  <script type="text/javascript">
+    function cl() {
+      window.location.href="index.html";
+    }
+    function op() {
+      window.location.href="baby.html";
+    }
+  </script>
+  </body>
+</html>
